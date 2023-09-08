@@ -1,9 +1,11 @@
 package application;
 
+import java.util.List;
 import java.util.Scanner;
 
 import model.dao.DaoFactory;
 import model.dao.SellerDao;
+import model.entities.Department;
 import model.entities.Seller;
 
 public class Program {
@@ -22,6 +24,18 @@ public class Program {
 		System.out.println("------------------------");
 		System.out.println();
 		System.out.println(seller);
+		
+		System.out.println("------------------------");
+		System.out.println();
+		
+		System.out.println("Consultar por departamento:");
+		n = in.nextInt();
+		Department department = new Department(n, null);
+		List<Seller> list = sellerDao.findByDepartment(department);
+		
+		for(Seller obj : list) {
+			System.out.println(obj);
+		}
 	}
 
 }
