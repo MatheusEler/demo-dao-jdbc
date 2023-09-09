@@ -58,6 +58,7 @@ public class SellerDaoJDBC implements SellerDao {
 			rs = st.executeQuery();
 			
 			List<Seller> list = new ArrayList<Seller>();
+			//Por que foi usado a estrutura de Hash Map?
 			Map<Integer, Department> map = new HashMap<> ();
 			
 			while(rs.next()) {
